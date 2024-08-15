@@ -1,6 +1,7 @@
 def merge_sorted_arrays(A, B):
-    i, j = 0, 0
     C = []
+    i = 0
+    j = 0
     while i < len(A) and j < len(B):
         if A[i] <= B[j]:
             C.append(A[i])
@@ -20,8 +21,9 @@ try:
     A = list(map(int, input_A.split()))
     input_B = input("Enter the elements of array B separated by spaces: ")
     B = list(map(int, input_B.split()))
+    A.sort()
+    B.sort()  
     C = merge_sorted_arrays(A, B)
-    print("Merged sorted array C:")
-    print(C)
+    print("Merged Array C:", C)
 except ValueError:
     print("Invalid input. Please enter a list of integers separated by spaces.")
